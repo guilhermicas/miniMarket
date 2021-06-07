@@ -3,6 +3,8 @@ import { Grid }from "@material-ui/core"
 
 import Product from "./Product/Product"
 
+import useStyles from './styles'
+
 const products = [
     {id:1, name:"laptop", description:"A good laptop", price:"$10", image:"https://pngimg.com/uploads/laptop/laptop_PNG5928.png"},
     {id:2, name:"Iphone", description:"A good phone", price:"$5", image:"https://phonesdata.com/files/models/Nokia-5800-XpressMusic-736.jpg"},
@@ -11,8 +13,11 @@ const products = [
 
 
 const Products = () => {
+    const classes = useStyles()
+
     return (
-        <main>
+        <main className={classes.content}>
+            <div className={classes.toolbar} />
             <Grid container justify="center" spacing={4}>
                 {products.map((product) => (
                     <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
